@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ScreenID_Website</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ScreenID_Website.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body >
+    <header style="position:fixed; background-color:transparent; width:100%; z-index:9999; top:0 ;">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="margin:0; padding:0;">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="padding-left:10px;">
+                     <img src="~/Images/Logo.png" style="width:80px;"/>
+                </a>
+                   
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between connected-line">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
+                        <li class="nav-item text-white blueBorderx" style="margin-right:3px;">
+                            <a class="nav-link " style="color:white;" href="/Home/Index">Home</a>
+                        </li>
+                        <li class="nav-item text-white" style="margin-right:3px;">
+                            <a class="nav-link " style="color:white;" href="/Home/License">License</a>
+                        </li>
+                        <li class="nav-item text-white" style="margin-right:3px;">
+                            <a class="nav-link" style="color:white;" asp-area="" asp-controller="Home" asp-action="Privacy">About</a>
+                        </li>
+                        <li class="nav-item text-white" style="margin-right:3px;">
+                            <a class="nav-link" style="color:white;" asp-area="" asp-controller="Home" asp-action="Privacy">Contact</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="justify-content-end" style="padding-right:60px;">
+                <input type="button" class="form-control" style="background-color:#0097C8; border-radius:5px; border:0px; color:white;" value="Request Demo" />
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    
+ <div class="" >
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="border-top:2px solid #000000!important">
+     
+
+        <div class="text-center">
+            Copyright &2023 ScreenID | Powered by BlueCloud Technologies 
+        </div>
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        var className = "inverted";
+        var scrollTrigger = 20;
+
+          $(document).ready(function() {
+          $(".nav li a").click(function(e) {
+              console.log("hi");
+            e.preventDefault();
+            $(".nav li").removeClass("blueBorderx");
+            $(".connected-line li").removeClass("blueBorderx");
+            $($(this).attr('href')).addClass('blueBorderx');
+            $(this).addClass("blueBorderx");
+          });
+        });
+        window.onscroll = function() {
+          // We add pageYOffset for compatibility with IE.
+          if (window.scrollY >= scrollTrigger || window.pageYOffset >= scrollTrigger) {
+            document.getElementsByTagName("header")[0].classList.add(className);
+          } else {
+            document.getElementsByTagName("header")[0].classList.remove(className);
+          }
+        };
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

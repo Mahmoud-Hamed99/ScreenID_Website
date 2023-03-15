@@ -1,0 +1,111 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.blueBorder {
+    border-bottom: 5px solid #0097C8;
+    width: 110px;
+    opacity: 1;
+}
+.blueBorderx {
+    border-top: 2px solid #0097C8;
+    opacity: 0.8;
+}
+
+.inverted {
+    background-color: #000f !important;
+    box-shadow: 0 3px 5px 0.3px rgba(0,0,0,0.1);
+    
+  }
+
+.firstSection {
+    width: 100%;
+    background-image: url('../Images/FirstSectionBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    min-height: 700px;
+    padding-top:70px;
+}
+.LicensefirstSection {
+    width: 100%;
+    background-image: url('../Images/LicenseBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    min-height: 350px;
+    padding-top: 70px;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('../Fonts/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: Rubik;
+    src: url('../Fonts/Rubik-Medium.ttf');
+}
+
+.description{
+    font-family:Roboto ;
+    font-size:1rem ;
+}
+
+
+
+
+.ul-icons {
+    color: white;
+}
+
+    .ul-icons li {
+        margin-bottom: 0.5rem;
+    }
+
+        .ul-icons li img {
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+@media only screen and (max-width: 290px) and (min-width: 280px) {
+    .divContent img{
+        width:40px !important;
+    }
+    .divContent label {
+        font-size: 0.68rem !important;
+    }
+}
+
+
+@media only screen and (max-width: 1024px) and (min-width: 280px) {
+    .divContent {
+        padding-left: 0px !important;
+    }
+
+}
+
+.lastSection {
+    width: 100%;
+    background-image: url('../Images/BG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 700px;
+    
+}
+
